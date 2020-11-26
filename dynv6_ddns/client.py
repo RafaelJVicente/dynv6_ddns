@@ -67,9 +67,13 @@ class Cli:
                               " where \"xxx\" are numbers between 0 and 255")
 
     def load_token_from_file(self):
-        cfg = Config(self.__config_file_path)
-        self.__token = cfg.token
-        self.check_token()
+        cfg = Config(self.__config_file_path) if self.__config_file_path else Config()
+        try:
+            self.__token = cfg.token
+            self.check_token()
+        except ValueError as e:
+            print(e)
+            exit()
 
     def start_update_thread(self, update_time: int = None):
         if update_time:

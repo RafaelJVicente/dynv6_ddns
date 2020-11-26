@@ -12,7 +12,7 @@ setuptools.setup(
     long_description=long_description,
     url='https://github.com/RafaelJVicente/dynv6_ddns',
     packages=setuptools.find_packages(),
-    install_requires=['uri'],
+    install_requires=['requests'],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
